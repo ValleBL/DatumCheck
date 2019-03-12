@@ -1,7 +1,7 @@
 #include <iostream>
 #include <string>
 #include <iomanip>
-using namespace std; //test
+using namespace std; //test2
 
 bool checkDay(int day);
 bool checkMonth(int month);
