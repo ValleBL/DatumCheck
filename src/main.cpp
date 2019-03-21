@@ -12,7 +12,7 @@ bool schaltjahr(int year); //Prüfe ob InputJahr Schaltjahr ist
 int splitJahrhundert(int year); 
 int splitJahrzehnt(int year);
 string convertWeekday(int weekday);
-void errorOuput(string ErrorText); //ErrorCode Ausgabe
+void errorOutput(string ErrorText); //ErrorCode Ausgabe
 
 int main() {
     int day, month, year, weekday, month_new, year_new;
@@ -29,7 +29,7 @@ int main() {
             cin >> day;
             if (checkDay(day) == false)
             {
-                errorOuput("Wert nicht zugelassen. (01-31)");
+                errorOutput("Wert nicht zugelassen. (01-31)");
                 //cout << "> Fehler! Wert nicht zugelassen. (01-31)" << endl;
             }
         }
@@ -41,7 +41,7 @@ int main() {
             cin >> month;
             if (checkMonth(month) == false)
             {
-                errorOuput("Wert nicht zugelassen. (01-12)");
+                errorOutput("Wert nicht zugelassen. (01-12)");
                 //cout << "> Fehler! Wert nicht zugelassen. (01-12)" << endl;
             }
         }
@@ -53,7 +53,7 @@ int main() {
             cin >> year;
             if (checkYear(year) == false)
             {
-                errorOuput("Wert nicht zugelassen. (Ab 1582)");
+                errorOutput("Wert nicht zugelassen. (Ab 1582)");
                 //cout << "> Fehler! Wert nicht zugelassen. (Ab 1582)" << endl;
             }
         }
@@ -65,7 +65,7 @@ int main() {
         system("cls");
         cout << "<-- Datumscheck [dd.mm.yyyy]-->" << endl;
         cout << "Gruppe 2: Stefan, Christoph, Florian, Marco, Valentin" << endl << endl;
-        errorOuput("Ungueltiger Tag im Monat oder gewaehltes Datum vor 15.10.1582");
+        errorOutput("Ungueltiger Tag im Monat oder gewaehltes Datum vor 15.10.1582");
         //cout << "> Fehler! Ungueltiger Tag im Monat oder gewaehltes Datum vor 15.10.1582" << endl;
     }
     } while (checkDate(day, month, year) == false);
@@ -226,7 +226,7 @@ string convertWeekday(int weekday)
     return weekdayText;
 }
 
-void errorOuput(string errorText)
+void errorOutput(string errorText)
 {
     cout << "> Fehler: " << errorText << endl;
 }
