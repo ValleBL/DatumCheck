@@ -3,15 +3,16 @@
 #include <iomanip>
 using namespace std;
 
-bool checkDay(int day);
-bool checkMonth(int month);
-bool checkYear(int year);
+//Deklaration der Funktionen
+bool checkDay(int day); //Legale Tagesangabe (1/31)
+bool checkMonth(int month); //Legale Monatsangabe (1/12)
+bool checkYear(int year); //Legale Jahresangabe (>= 1582)
 bool checkDate(int day, int month, int year);
-bool schaltjahr(int year);
-int splitJahrhundert(int year);
+bool schaltjahr(int year); //Prüfe ob InputJahr Schaltjahr ist
+int splitJahrhundert(int year); 
 int splitJahrzehnt(int year);
 string convertWeekday(int weekday);
-void errorOuput(string ErrorText);
+void errorOuput(string ErrorText); //ErrorCode Ausgabe
 
 int main() {
     int day, month, year, weekday, month_new, year_new;
