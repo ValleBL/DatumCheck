@@ -12,12 +12,12 @@ bool schaltjahr(int year); //Prüfe ob InputJahr Schaltjahr ist
 int splitJahrhundert(int year); 
 int splitJahrzehnt(int year);
 string convertWeekday(int weekday);
-void errorOutput(string ErrorText); //ErrorCode Ausgabe
+//void errorOutput(string ErrorText); //ErrorCode Ausgabe - Wird nicht verwendet
 
 int main() {
     int day, month, year, weekday, month_new, year_new;
 
-    system("cls");
+    //system("cls");
     cout << "<-- Datumscheck [dd.mm.yyyy]-->" << endl;
     cout << "Gruppe 2: Christoph, Florian, Marco, Stefan, Valentin" << endl << endl;
     
@@ -29,8 +29,8 @@ int main() {
             cin >> day;
             if (checkDay(day) == false)
             {
-                errorOutput("Wert nicht zugelassen. (01-31)");
-                //cout << "> Fehler! Wert nicht zugelassen. (01-31)" << endl;
+                //errorOutput("Wert nicht zugelassen. (01-31)");
+                cout << "> Fehler! Wert nicht zugelassen. (01-31)" << endl;
             }
         }
         while (checkDay(day) == false);
@@ -41,8 +41,8 @@ int main() {
             cin >> month;
             if (checkMonth(month) == false)
             {
-                errorOutput("Wert nicht zugelassen. (01-12)");
-                //cout << "> Fehler! Wert nicht zugelassen. (01-12)" << endl;
+                //errorOutput("Wert nicht zugelassen. (01-12)");
+                cout << "> Fehler! Wert nicht zugelassen. (01-12)" << endl;
             }
         }
         while (checkMonth(month) == false);
@@ -53,8 +53,8 @@ int main() {
             cin >> year;
             if (checkYear(year) == false)
             {
-                errorOutput("Wert nicht zugelassen. (Ab 1582)");
-                //cout << "> Fehler! Wert nicht zugelassen. (Ab 1582)" << endl;
+                //errorOutput("Wert nicht zugelassen. (Ab 1582)");
+                cout << "> Fehler! Wert nicht zugelassen. (Ab 1582)" << endl;
             }
         }
         while (checkYear(year) == false);
@@ -65,8 +65,8 @@ int main() {
         system("cls");
         cout << "<-- Datumscheck [dd.mm.yyyy]-->" << endl;
         cout << "Gruppe 2: Stefan, Christoph, Florian, Marco, Valentin" << endl << endl;
-        errorOutput("Ungueltiger Tag im Monat oder gewaehltes Datum vor 15.10.1582");
-        //cout << "> Fehler! Ungueltiger Tag im Monat oder gewaehltes Datum vor 15.10.1582" << endl;
+        //errorOutput("Ungueltiger Tag im Monat oder gewaehltes Datum vor 15.10.1582");
+        cout << "> Fehler! Ungueltiger Tag im Monat oder gewaehltes Datum vor 15.10.1582" << endl;
     }
     } while (checkDate(day, month, year) == false);
 
@@ -90,7 +90,7 @@ int main() {
 
     return 0;
 }
-
+// ENDE Main Funktion
 bool checkDate(int day, int month, int year)
 {
     int max_day;
@@ -176,6 +176,7 @@ bool schaltjahr(int year)
 	{
 		return true;
 	}
+    return false;
 }
 
 int splitJahrzehnt(int year)
@@ -226,7 +227,7 @@ string convertWeekday(int weekday)
     return weekdayText;
 }
 
-void errorOutput(string errorText)
+void errorOutput(string errorText) //Wird nicht verwendet
 {
     cout << "> Fehler: " << errorText << endl;
 }
